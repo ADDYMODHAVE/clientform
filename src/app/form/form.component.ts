@@ -16,6 +16,7 @@ import {
 })
 export class FormComponent implements OnInit {
   clientForm!: FormGroup;
+  isBike: string = '';
 
   constructor(private fb: FormBuilder) {}
 
@@ -31,6 +32,9 @@ export class FormComponent implements OnInit {
         this.clientForm.get('state')?.setValue(value, { emitEvent: false });
       }
     });
+    this.clientForm.get('vehicle')?.valueChanges.subscribe((value) => {
+      this.isBike = value;
+    });
   }
 
   initForm() {
@@ -44,7 +48,8 @@ export class FormComponent implements OnInit {
       placeOfWork: ['', Validators.required],
       reportingManager: ['', Validators.required],
       vehicle: ['', Validators.required],
-      vehicleRc: ['', Validators.required],
+      bikeNumber: ['', Validators.required],
+      bikeRc: ['', Validators.required],
       aadharNumber: [
         '',
         [Validators.required, Validators.pattern(/^[0-9]{12}$/)],
