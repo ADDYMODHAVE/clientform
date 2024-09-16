@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none !important;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif !important;
+  list-style: none;
+}
+.text_blue {
+  color: #5f9ea0 !important;
+}
+.bg_blue {
+  background: #5f9ea0;
+}
+.input_design {
+  border-radius: 4px !important;
+  color: #a7a7a7 !important;
+  font: medium !important;
+  outline: none !important;
+  cursor: pointer;
+  background: rgb(245, 244, 244) !important;
+}
+.Submit_btn {
+  border: none !important;
+  padding: 12px 45px !important;
+}
+.Submit_btn:focus,
+.Submit_btn:hover {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 0.7em transparent;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #ffffff;
+  }
+}

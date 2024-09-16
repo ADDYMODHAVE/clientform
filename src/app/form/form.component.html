@@ -1,0 +1,394 @@
+<div class="p-4 bg_blue">
+  <div class="container py-4 rounded-3">
+    <form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+      <h1 class="text-center mb-5 fw-bold text-white text-decoration-underline">
+        Registration Form
+      </h1>
+
+      <!-- ------------personal-info------------ -->
+      <div class="row d-flex gap-md-0 gap-2 p-3 rounded-2 bg-light-subtle">
+        <h2 class="text_blue fs-3 fw-medium">Personal Information</h2>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Name</label>
+            <input class="form-control input_design" formControlName="name" />
+            <div
+              *ngIf="
+                clientForm.get('name')?.invalid &&
+                clientForm.get('name')?.touched
+              "
+              class="text-danger"
+            >
+              Name is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Head Quarter</label>
+            <select
+              class="form-control input_design"
+              formControlName="headQuarter"
+            >
+              <option value="">Select</option>
+              <option value="HQ1">HQ1</option>
+              <option value="HQ2">HQ2</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('headQuarter')?.invalid &&
+                clientForm.get('headQuarter')?.touched
+              "
+              class="text-danger"
+            >
+              Headquarter is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">State</label>
+            <select class="form-control input_design" formControlName="state">
+              <option value="">Select</option>
+              <option value="State1">State 1</option>
+              <option value="State2">State 2</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('state')?.invalid &&
+                clientForm.get('state')?.touched
+              "
+              class="text-danger"
+            >
+              State is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------working-area------------ -->
+      <div class="row gap-2 p-3 shadow rounded-2 bg-light-subtle my-4">
+        <div class="row d-flex gap-md-0 gap-2">
+          <h2 class="fs-3 fw-medium text_blue">Working Area</h2>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label mb-1">State</label>
+              <select
+                class="form-control input_design"
+                formControlName="workingState"
+              >
+                <option value="">Select</option>
+                <option value="State1">State 1</option>
+                <option value="State2">State 2</option>
+              </select>
+              <div
+                *ngIf="
+                  clientForm.get('workingState')?.invalid &&
+                  clientForm.get('workingState')?.touched
+                "
+                class="text-danger"
+              >
+                Working state is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label mb-1">City</label>
+              <select
+                class="form-control input_design"
+                formControlName="workingCity"
+              >
+                <option value="">Select</option>
+                <option value="City1">City 1</option>
+                <option value="City2">City 2</option>
+              </select>
+              <div
+                *ngIf="
+                  clientForm.get('workingCity')?.invalid &&
+                  clientForm.get('workingCity')?.touched
+                "
+                class="text-danger"
+              >
+                Working city is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex gap-md-0 gap-2">
+          <h2 class="fs-3 fw-medium text_blue">Interior</h2>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label mb-1">City</label>
+              <input
+                class="form-control input_design"
+                formControlName="interiorCity"
+              />
+              <div
+                *ngIf="
+                  clientForm.get('interiorCity')?.invalid &&
+                  clientForm.get('interiorCity')?.touched
+                "
+                class="text-danger"
+              >
+                Interior city is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label class="form-label mb-1">Place of Work</label>
+              <input
+                class="form-control input_design"
+                formControlName="placeOfWork"
+              />
+              <div
+                *ngIf="
+                  clientForm.get('placeOfWork')?.invalid &&
+                  clientForm.get('placeOfWork')?.touched
+                "
+                class="text-danger"
+              >
+                Place of work is required
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------vehicle-details------------ -->
+      <div
+        class="row my-4 d-flex gap-md-0 gap-2 p-3 shadow rounded-2 bg-light-subtle"
+      >
+        <h2 class="fs-3 fw-medium text_blue">Vehicle Details</h2>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Vehicle</label>
+            <select class="form-control input_design" formControlName="vehicle">
+              <option value="">Select</option>
+              <option value="Bike">Bike</option>
+              <option value="Car">Car</option>
+              <option value="Both">Both</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('vehicle')?.invalid &&
+                clientForm.get('vehicle')?.touched
+              "
+              class="text-danger"
+            >
+              Vehicle is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Vehicle Number</label>
+            <input
+              class="form-control input_design"
+              formControlName="vehicleRc"
+            />
+            <div
+              *ngIf="
+                clientForm.get('vehicleRc')?.invalid &&
+                clientForm.get('vehicleRc')?.touched
+              "
+              class="text-danger"
+            >
+              Vehicle number is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------identification------------ -->
+      <div
+        class="row d-flex gap-md-0 gap-2 p-3 shadow rounded-2 bg-light-subtle"
+      >
+        <h2 class="fs-3 fw-medium text_blue">Identification and Salary</h2>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Aadhar Number</label>
+            <input
+              class="form-control input_design"
+              formControlName="aadharNumber"
+              placeholder="Enter 12 digit Aadhar"
+              type="number"
+            />
+            <div
+              *ngIf="
+                clientForm.get('aadharNumber')?.invalid &&
+                clientForm.get('aadharNumber')?.touched
+              "
+              class="text-danger"
+            >
+              Aadhar number must be 12 digits
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Salary</label>
+            <input
+              class="form-control input_design"
+              formControlName="salary"
+              type="number"
+            />
+            <div
+              *ngIf="
+                clientForm.get('salary')?.invalid &&
+                clientForm.get('salary')?.touched
+              "
+              class="text-danger"
+            >
+              Salary is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------allowances------------ -->
+      <div
+        class="row my-4 d-flex gap-md-0 gap-2 p-3 shadow rounded-2 bg-light-subtle"
+      >
+        <h2 class="fs-3 fw-medium text_blue">Allowances</h2>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Head Quarter</label>
+            <input
+              class="form-control input_design"
+              formControlName="allowanceHeadQuarter"
+              type="text"
+            />
+            <div
+              *ngIf="
+                clientForm.get('allowanceHeadQuarter')?.invalid &&
+                clientForm.get('allowanceHeadQuarter')?.touched
+              "
+              class="text-danger"
+            >
+              Allowance Head Quarter is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Ex Station</label>
+            <input
+              class="form-control input_design"
+              formControlName="allowanceExStation"
+              type="text"
+            />
+            <div
+              *ngIf="
+                clientForm.get('allowanceExStation')?.invalid &&
+                clientForm.get('allowanceExStation')?.touched
+              "
+              class="text-danger"
+            >
+              Allowance Ex-Station is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Out Station</label>
+            <input
+              class="form-control input_design"
+              formControlName="allowanceOutStation"
+              type="text"
+            />
+            <div
+              *ngIf="
+                clientForm.get('allowanceOutStation')?.invalid &&
+                clientForm.get('allowanceOutStation')?.touched
+              "
+              class="text-danger"
+            >
+              Allowance Out-Station is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------other------------ -->
+      <div
+        class="row d-flex gap-md-0 gap-2 p-3 shadow rounded-2 bg-light-subtle"
+      >
+        <h2 class="fs-3 fw-medium text_blue">Other Details</h2>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Distributor Name</label>
+            <select
+              class="form-control input_design"
+              formControlName="distributorName"
+            >
+              <option value="">Select</option>
+              <option value="distributorName">Distributor 1</option>
+              <option value="distributorName">Distributor 2</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('distributorName')?.invalid &&
+                clientForm.get('distributorName')?.touched
+              "
+              class="text-danger"
+            >
+              Distributor name is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">CSA</label>
+            <select class="form-control input_design" formControlName="csa">
+              <option value="">Select</option>
+              <option value="csa1">CSA 1</option>
+              <option value="csa2">CSA 2</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('csa')?.invalid && clientForm.get('csa')?.touched
+              "
+              class="text-danger"
+            >
+              CSA is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="mb-3">
+            <label class="form-label mb-1">Reporting Manager</label>
+            <select
+              class="form-control input_design"
+              formControlName="reportingManager"
+            >
+              <option value="">Select</option>
+              <option value="Manager1">Manager 1</option>
+              <option value="Manager2">Manager 2</option>
+            </select>
+            <div
+              *ngIf="
+                clientForm.get('reportingManager')?.invalid &&
+                clientForm.get('reportingManager')?.touched
+              "
+              class="text-danger"
+            >
+              Reporting Manager is required
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------Submit-Btn------------ -->
+      <div class="mt-5 d-flex justify-content-center align-items-center">
+        <button
+          type="submit"
+          class="Submit_btn rounded-2 text_blue fw-bold fs-5"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
