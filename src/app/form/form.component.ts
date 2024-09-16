@@ -21,6 +21,16 @@ export class FormComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+    this.clientForm.get('state')?.valueChanges.subscribe((value) => {
+      this.clientForm
+        .get('workingState')
+        ?.setValue(value, { emitEvent: false });
+    });
+    this.clientForm.get('workingState')?.valueChanges.subscribe((value) => {
+      if (value !== this.clientForm.get('state')?.value) {
+        this.clientForm.get('state')?.setValue(value, { emitEvent: false });
+      }
+    });
   }
 
   initForm() {
