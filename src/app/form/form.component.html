@@ -181,7 +181,7 @@
             </div>
           </div>
         </div>
-        @if (isBike === "Bike") {
+        @if (isBike === "Bike" || isBike === "Both") {
         <div class="col-md-6">
           <div class="mb-3">
             <label class="form-label mb-1">Bike Number</label>
@@ -212,6 +212,41 @@
               class="text-danger"
             >
               Bike Rc is required
+            </div>
+          </div>
+        </div>
+
+        } @if (isBike === "Car" || isBike === "Both") {
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Car Number</label>
+            <input
+              class="form-control input_design"
+              formControlName="carNumber"
+            />
+            <div
+              *ngIf="
+                clientForm.get('carNumber')?.invalid &&
+                clientForm.get('carNumber')?.touched
+              "
+              class="text-danger"
+            >
+              Car Number is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-3">
+            <label class="form-label mb-1">Car Rc</label>
+            <input class="form-control input_design" formControlName="bikeRc" />
+            <div
+              *ngIf="
+                clientForm.get('carRc')?.invalid &&
+                clientForm.get('carRc')?.touched
+              "
+              class="text-danger"
+            >
+              Car Rc is required
             </div>
           </div>
         </div>
