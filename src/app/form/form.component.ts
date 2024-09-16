@@ -50,6 +50,8 @@ export class FormComponent implements OnInit {
       vehicle: ['', Validators.required],
       bikeNumber: ['', Validators.required],
       bikeRc: ['', Validators.required],
+      carNumber: ['', Validators.required],
+      carRc: ['', Validators.required],
       aadharNumber: [
         '',
         [Validators.required, Validators.pattern(/^[0-9]{12}$/)],
